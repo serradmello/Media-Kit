@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serra D'mello — Creator Media Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FFFCF8;
+    --espresso: #1A1208;
+    --mocha: #3D2B1F;
+    --dusty-rose: #C4907A;
+    --blush: #EDD5C8;
+    --sage: #8A9E8C;
+    --sage-light: #D6E2D7;
+    --gold: #B89A6A;
+    --gold-light: #EFE4D0;
+    --border: rgba(26,18,8,0.1);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--espresso);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--warm-white);
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 64px 64px 48px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: end;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 16px;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 62px;
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--espresso);
+    margin-bottom: 6px;
+  }
+
+  .hero-handle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--dusty-rose);
+    margin-bottom: 20px;
+  }
+
+  .hero-bio {
+    font-size: 14px;
+    color: var(--mocha);
+    line-height: 1.7;
+    max-width: 420px;
+    font-weight: 300;
+  }
+
+  .hero-badge-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .badge {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  .badge-rose { background: var(--blush); color: var(--mocha); }
+  .badge-sage { background: var(--sage-light); color: #3A5440; }
+  .badge-gold { background: var(--gold-light); color: #6B5330; }
+
+  /* STATS STRIP */
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stat-block {
+    padding: 32px 24px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  .stat-block:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--espresso);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+  }
+
+  .stat-sub {
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+  }
+
+  /* BODY SECTIONS */
+  .body { padding: 0 64px; }
+
+  .section {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 24px;
+  }
+
+  /* AUDIENCE */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .aud-card {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .aud-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 16px;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .bar-label {
+    font-size: 12px;
+    color: var(--mocha);
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(26,18,8,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+
+  .bar-fill-rose { background: var(--dusty-rose); }
+  .bar-fill-sage { background: var(--sage); }
+  .bar-fill-gold { background: var(--gold); }
+
+  .bar-pct {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--espresso);
+    width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* CONTENT PILLARS */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .pillar-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .pillar-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .icon-rose { background: var(--blush); }
+  .icon-sage { background: var(--sage-light); }
+  .icon-gold { background: var(--gold-light); }
+  .icon-muted { background: var(--cream); }
+
+  .pillar-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--espresso);
+    margin-bottom: 6px;
+  }
+
+  .pillar-desc {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.6;
+  }
+
+  /* COLLAB */
+  .collab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .collab-card {
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+
+  .collab-cat {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .collab-pitch {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .c-rose { background: var(--blush); }
+  .c-rose .collab-cat { color: #8C4A32; }
+  .c-rose .collab-pitch { color: var(--mocha); }
+
+  .c-sage { background: var(--sage-light); }
+  .c-sage .collab-cat { color: #3A5440; }
+  .c-sage .collab-pitch { color: #2D4230; }
+
+  .c-gold { background: var(--gold-light); }
+  .c-gold .collab-cat { color: #6B5330; }
+  .c-gold .collab-pitch { color: #4A3820; }
+
+  .c-cream { background: var(--cream); border: 1px solid var(--border); }
+  .c-cream .collab-cat { color: var(--dusty-rose); }
+  .c-cream .collab-pitch { color: var(--mocha); }
+
+  /* VALUE PROP */
+  .value-box {
+    background: var(--espresso);
+    color: var(--cream);
+    border-radius: 12px;
+    padding: 36px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .value-box::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(196,144,122,0.15);
+  }
+
+  .value-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--blush);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .value-sub {
+    font-size: 12px;
+    color: rgba(250,247,242,0.6);
+    line-height: 1.7;
+    position: relative;
+  }
+
+  /* CONTACT */
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .contact-info { }
+
+  .contact-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--espresso);
+    margin-bottom: 4px;
+  }
+
+  .contact-detail {
+    font-size: 13px;
+    color: #888;
+  }
+
+  .contact-detail a {
+    color: var(--dusty-rose);
+    text-decoration: none;
+  }
+
+  .contact-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 24px 64px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-note {
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dusty-rose);
+  }
+
+  @media print {
+    body { background: white; }
+    .page { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">Creator Media Kit · 2026</p>
+      <h1 class="hero-name">Serra<br>D'mello</h1>
+      <p class="hero-handle">@serrcasm</p>
+      <p class="hero-bio">Digital creator based in Melbourne, Australia. Rom-com life meets real talk, documenting the soft chaos of being a bride-to-be navigating love, corporate life, and a new city. Relatable, cinematic, and genuinely funny.</p>
+    </div>
+    <div class="hero-badge-group">
+      <span class="badge badge-rose">Melbourne-based</span>
+      <span class="badge badge-sage">Bride to be</span>
+      <span class="badge badge-gold">Digital creator</span>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat-block">
+      <div class="stat-num">1.1M</div>
+      <div class="stat-label">Monthly Views</div>
+      <div class="stat-sub">Last 30 days</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">1,870</div>
+      <div class="stat-label">Followers</div>
+      <div class="stat-sub">& growing</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">45.4K</div>
+      <div class="stat-label">Interactions</div>
+      <div class="stat-sub">Last 30 days</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">3.9M</div>
+      <div class="stat-label">Top Reel Views</div>
+      <div class="stat-sub">Single post</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- AUDIENCE -->
+    <div class="section">
+      <p class="section-label">Audience breakdown</p>
+      <div class="audience-grid">
+
+        <div class="aud-card">
+          <p class="aud-title">Top countries</p>
+          <p style="font-size:13px; color:var(--mocha); line-height:1.8; font-weight:300;">Serra's audience spans globally, with her strongest reach across <strong style="font-weight:500;">India, Australia, the United States,</strong> and <strong style="font-weight:500;">the United Kingdom</strong>.</p>
+        </div>
+
+        <div class="aud-card">
+          <p class="aud-title">Age & gender</p>
+          <div class="bar-row">
+            <span class="bar-label">18–24</span>
+            <div class="bar-track"><div class="bar-fill bar-fill-gold" style="width:49.4%"></div></div>
+            <span class="bar-pct">49.4%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">25–34</span>
+            <div class="bar-track"><div class="bar-fill bar-fill-gold" style="width:35.5%;opacity:0.7"></div></div>
+            <span class="bar-pct">35.5%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">35–44</span>
+            <div class="bar-track"><div class="bar-fill bar-fill-gold" style="width:6.1%;opacity:0.5"></div></div>
+            <span class="bar-pct">6.1%</span>
+          </div>
+          <div style="height:16px"></div>
+          <div class="bar-row">
+            <span class="bar-label">Women</span>
+            <div class="bar-track"><div class="bar-fill bar-fill-rose" style="width:80.3%"></div></div>
+            <span class="bar-pct">80.3%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Men</span>
+            <div class="bar-track"><div class="bar-fill bar-fill-rose" style="width:19.7%;opacity:0.4"></div></div>
+            <span class="bar-pct">19.7%</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VALUE PROP -->
+    <div class="section">
+      <p class="section-label">Why Serra</p>
+      <div class="value-box">
+        <p class="value-quote">"1.1 million monthly views. A fiancée, a corporate girlie, a gym regular. And a creator whose audience actually shows up."</p>
+        <p class="value-sub">Serra is in her bride-to-be era and she's bringing her audience along for every moment of it. From corporate desk to gym mirror to wedding planning chaos, her content is warm, cinematic, and deeply relatable to women in their 20s and 30s. She also carries a global footprint with strong reach into South Asian markets, making her a rare find for brands wanting authentic access to multiple audiences at once. Her content converts because it feels personal, not promotional.</p>
+      </div>
+    </div>
+
+    <!-- CONTENT PILLARS -->
+    <div class="section">
+      <p class="section-label">Content pillars</p>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon icon-rose">🏙</div>
+          <p class="pillar-title">Melbourne lifestyle</p>
+          <p class="pillar-desc">Cinematic b-roll of Melbourne cafés, parks, weekends, and hidden gems. Makes the city aspirational for her global audience.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon icon-sage">✨</div>
+          <p class="pillar-title">Bride to be era</p>
+          <p class="pillar-desc">Planning a wedding from Melbourne while living a full life. Engagement content, real moments, and everything in between. Highly saved and shared.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon icon-gold">💍</div>
+          <p class="pillar-title">Love and relationship</p>
+          <p class="pillar-desc">Fiancée content that is warm, cinematic, and real. Consistent top performer with multiple posts above 200K views.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon icon-muted">💻</div>
+          <p class="pillar-title">Corporate and gym girl</p>
+          <p class="pillar-desc">Tech job, gym sessions, soft life aesthetics. Honest and humorous. Broad appeal for lifestyle, fitness, and wellness brands.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLLAB TYPES -->
+    <div class="section">
+      <p class="section-label">Open to collaborate</p>
+      <div class="collab-grid">
+        <div class="collab-card c-rose">
+          <p class="collab-cat">Food and Restaurants</p>
+          <p class="collab-pitch">Melbourne restaurant and café features, multicultural dining experiences, and food brands looking for authentic placement.</p>
+        </div>
+        <div class="collab-card c-sage">
+          <p class="collab-cat">Fitness and Wellness</p>
+          <p class="collab-pitch">Gym partnerships, activewear, wellness apps, supplements. Morning routine format proven to convert.</p>
+        </div>
+        <div class="collab-card c-gold">
+          <p class="collab-cat">Travel and Experiences</p>
+          <p class="collab-pitch">Weekend getaways, Tourism Victoria, airline deals. Her spend-a-weekend-with-me format is a consistent top performer.</p>
+        </div>
+        <div class="collab-card c-cream">
+          <p class="collab-cat">Fashion and Lifestyle</p>
+          <p class="collab-pitch">Occasion wear, bridal era content, everyday style. Ideal for Australian labels wanting a relatable, stylish Melbourne voice.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section">
+      <p class="section-label">Get in touch</p>
+      <div class="contact-row">
+        <div class="contact-info">
+          <p class="contact-name">Serra D'mello</p>
+          <p class="contact-detail">
+            <a href="mailto:serrcasm@gmail.com">serrcasm@gmail.com</a>
+          </p>
+          <p class="contact-detail" style="margin-top:4px;">Instagram: <a href="https://instagram.com/serrcasm">@serrcasm</a></p>
+        </div>
+        <div class="contact-tags">
+          <span class="badge badge-rose">Melbourne, VIC</span>
+          <span class="badge badge-sage">Available for collabs</span>
+          <span class="badge badge-gold">Gifted & paid</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span class="footer-note">Stats period: 23 Mar to 21 Apr 2026 · Instagram Professional Dashboard</span>
+    <div class="footer-dot"></div>
+    <span class="footer-note">serrcasm@gmail.com</span>
+  </div>
+
+</div>
+</body>
+</html>
