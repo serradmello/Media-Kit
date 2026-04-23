@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serra D'mello — Rates</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FFFCF8;
+    --espresso: #1A1208;
+    --mocha: #3D2B1F;
+    --dusty-rose: #C4907A;
+    --blush: #EDD5C8;
+    --sage: #8A9E8C;
+    --sage-light: #D6E2D7;
+    --gold: #B89A6A;
+    --gold-light: #EFE4D0;
+    --border: rgba(26,18,8,0.1);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--espresso);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--warm-white);
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 64px 64px 48px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: end;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 16px;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 62px;
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--espresso);
+    margin-bottom: 6px;
+  }
+
+  .hero-handle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--dusty-rose);
+    margin-bottom: 20px;
+  }
+
+  .hero-bio {
+    font-size: 14px;
+    color: var(--mocha);
+    line-height: 1.7;
+    max-width: 420px;
+    font-weight: 300;
+  }
+
+  .hero-badge-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .badge {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  .badge-rose { background: var(--blush); color: var(--mocha); }
+  .badge-sage { background: var(--sage-light); color: #3A5440; }
+  .badge-gold { background: var(--gold-light); color: #6B5330; }
+
+  /* BODY */
+  .body { padding: 0 64px; }
+
+  .section {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty-rose);
+    margin-bottom: 8px;
+  }
+
+  .section-intro {
+    font-size: 13px;
+    color: #999;
+    font-weight: 300;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  /* RATE CARDS */
+  .rate-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .rate-card:last-child { margin-bottom: 0; }
+
+  .rate-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 22px 28px;
+    gap: 24px;
+  }
+
+  .rate-header-left {}
+
+  .rate-type {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--espresso);
+    margin-bottom: 4px;
+  }
+
+  .rate-desc {
+    font-size: 12px;
+    color: #999;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .rate-price-block {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .rate-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--espresso);
+    line-height: 1;
+  }
+
+  .rate-currency {
+    font-size: 13px;
+    color: var(--dusty-rose);
+    font-weight: 500;
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .rate-body {
+    border-top: 1px solid var(--border);
+    padding: 18px 28px;
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .rate-detail-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 4px;
+  }
+
+  .rate-detail-value {
+    font-size: 12px;
+    color: var(--mocha);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* FEATURED CARD */
+  .rate-card.featured {
+    border-color: var(--dusty-rose);
+  }
+
+  .rate-card.featured .rate-header {
+    background: var(--espresso);
+  }
+
+  .rate-card.featured .rate-type {
+    color: var(--blush);
+  }
+
+  .rate-card.featured .rate-desc {
+    color: rgba(237,213,200,0.5);
+  }
+
+  .rate-card.featured .rate-price {
+    color: var(--blush);
+  }
+
+  .rate-card.featured .rate-currency {
+    color: var(--dusty-rose);
+  }
+
+  .featured-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--dusty-rose);
+    color: var(--warm-white);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
+  /* NOTES */
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .note-card {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+
+  .note-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--espresso);
+    margin-bottom: 6px;
+  }
+
+  .note-text {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* DARK BOX */
+  .dark-box {
+    background: var(--espresso);
+    border-radius: 12px;
+    padding: 32px 36px;
+  }
+
+  .dark-box-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blush);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .dark-box-sub {
+    font-size: 12px;
+    color: rgba(250,247,242,0.5);
+    line-height: 1.7;
+  }
+
+  /* CONTACT */
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .contact-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--espresso);
+    margin-bottom: 4px;
+  }
+
+  .contact-detail {
+    font-size: 13px;
+    color: #888;
+  }
+
+  .contact-detail a {
+    color: var(--dusty-rose);
+    text-decoration: none;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 24px 64px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-note {
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dusty-rose);
+  }
+
+  @media print {
+    body { background: white; }
+    .page { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">Rates and Deliverables · 2026</p>
+      <h1 class="hero-name">Serra<br>D'mello</h1>
+      <p class="hero-handle">@serrcasm</p>
+      <p class="hero-bio">Pricing for paid brand collaborations. All rates are in Australian dollars and reflect the current reach, engagement, and production quality of Serra's content.</p>
+    </div>
+    <div class="hero-badge-group">
+      <span class="badge badge-rose">1.1M monthly views</span>
+      <span class="badge badge-sage">45.4K interactions</span>
+      <span class="badge badge-gold">AUD pricing</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- RATES -->
+    <div class="section">
+      <p class="section-label">Deliverables and pricing</p>
+      <p class="section-intro">All packages include one round of revisions. Usage rights and exclusivity available on request at an additional fee.</p>
+
+      <!-- REEL + STORY - FEATURED -->
+      <div class="rate-card featured">
+        <div class="rate-header">
+          <div class="rate-header-left">
+            <span class="featured-tag">Most popular</span>
+            <p class="rate-type">Reel and Story</p>
+            <p class="rate-desc">One branded Reel posted to feed plus a Story set (2 frames) linking back to the brand. Full production, scripting, and caption included.</p>
+          </div>
+          <div class="rate-price-block">
+            <p class="rate-price">$500</p>
+            <p class="rate-currency">AUD per post</p>
+          </div>
+        </div>
+        <div class="rate-body">
+          <div>
+            <p class="rate-detail-label">Turnaround</p>
+            <p class="rate-detail-value">5 to 7 business days</p>
+          </div>
+          <div>
+            <p class="rate-detail-label">Revisions</p>
+            <p class="rate-detail-value">1 round included</p>
+          </div>
+          <div>
+            <p class="rate-detail-label">Usage rights</p>
+            <p class="rate-detail-value">30 days, extendable</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SINGLE REEL -->
+      <div class="rate-card">
+        <div class="rate-header">
+          <div class="rate-header-left">
+            <p class="rate-type">Single Reel</p>
+            <p class="rate-desc">One branded Reel posted to feed. Includes concept, filming, edit, caption, and one round of review before posting.</p>
+          </div>
+          <div class="rate-price-block">
+            <p class="rate-price">$400</p>
+            <p class="rate-currency">AUD per post</p>
+          </div>
+        </div>
+        <div class="rate-body">
+          <div>
+            <p class="rate-detail-label">Turnaround</p>
+            <p class="rate-detail-value">5 to 7 business days</p>
+          </div>
+          <div>
+            <p class="rate-detail-label">Revisions</p>
+            <p class="rate-detail-value">1 round included</p>
+          </div>
+          <div>
+            <p class="rate-detail-label">Usage rights</p>
+            <p class="rate-detail-value">30 days, extendable</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATIC POST -->
+      <div class="rate-card">
+        <div class="rate-header">
+          <div class="rate-header-left">
+            <p class="rate-type">Dedicated static post</p>
+            <p class="rate-desc">One branded photo or carousel posted to feed. Includes photography, editing, caption, and hashtag strategy.</p>
+          </div>
+          <div class="rate-price-block">
+            <p class="rate-price">$250</p>
+            <p class="rate-currency">AUD per post</p>
+          </div>
+        </div>
+        <div class="rate-body">
+          <div>
+            <p class="rate-detail-label">Turnaround</p>
+            <p class="rate-detail-value">3 to 5 business days</p>
+          </div>
+          <div>
+            <p class="rate-detail-label">Revisions</p>
+            <p class="rate-detail-value">1 round included</p>
+          </div>
+          <div>
+            <p class="rate-detail-label">Usage rights</p>
+            <p class="rate-detail-value">30 days, extendable</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- UGC -->
+      <div class="rate-card">
+        <div class="rate-header">
+          <div class="rate-header-left">
+            <p class="rate-type">UGC content only</p>
+            <p class="rate-desc">Brand-ready video content filmed and delivered to the brand. Not posted to Serra's channel. Ideal for brands who want authentic content for their own platforms or ads.</p>
+          </div>
+          <div class="rate-price-block">
+            <p class="rate-price">$200</p>
+            <p class="rate-currency">AUD per video</p>
+          </div>
+        </div>
+        <div class="rate-body">
+          <div>
+            <p class="rate-detail-label">Turnaround</p>
+            <p class="rate-detail-value">3 to 5 business days</p>
+          </div>
+          <div>
+            <p class="rate-detail-label">Revisions</p>
+            <p class="rate-detail-value">1 round included</p>
+          </div>
+          <div>
+            <p class="rate-detail-label">Usage rights</p>
+            <p class="rate-detail-value">Full rights on delivery</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NOTES -->
+    <div class="section">
+      <p class="section-label">Good to know</p>
+      <div class="notes-grid">
+        <div class="note-card">
+          <p class="note-title">Gifted collabs</p>
+          <p class="note-text">Serra is open to gifted collaborations for the right brand fit, particularly for food, lifestyle, and experience categories. Please reach out to discuss.</p>
+        </div>
+        <div class="note-card">
+          <p class="note-title">Exclusivity</p>
+          <p class="note-text">Category exclusivity is available for an additional 30 to 50% on the base rate, depending on duration and category. Minimum 30 day window.</p>
+        </div>
+        <div class="note-card">
+          <p class="note-title">Whitelisting and ads</p>
+          <p class="note-text">If the brand wishes to boost or whitelist Serra's content as a paid ad, this is charged separately. Rates on request.</p>
+        </div>
+        <div class="note-card">
+          <p class="note-title">Bundles</p>
+          <p class="note-text">Booking two or more deliverables at once? Ask about bundle pricing. Long-term partnerships are warmly welcomed and priced accordingly.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PITCH -->
+    <div class="section">
+      <div class="dark-box">
+        <p class="dark-box-quote">"These rates reflect reach, not just follower count. 1.1 million monthly views speaks for itself."</p>
+        <p class="dark-box-sub">Serra's content regularly outperforms accounts ten times her size. Her audience is highly engaged, predominantly female, aged 18 to 34, and spread across global markets that are difficult to access through traditional advertising. Brands working with Serra get authentic storytelling, fast turnaround, and content that genuinely performs.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section">
+      <p class="section-label">Ready to work together</p>
+      <div class="contact-row">
+        <div>
+          <p class="contact-name">Serra D'mello</p>
+          <p class="contact-detail"><a href="mailto:serrcasm@gmail.com">serrcasm@gmail.com</a></p>
+          <p class="contact-detail" style="margin-top:4px;">Instagram: <a href="https://instagram.com/serrcasm">@serrcasm</a></p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="badge badge-rose">Melbourne, VIC</span>
+          <span class="badge badge-sage">Available now</span>
+          <span class="badge badge-gold">Gifted and paid</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span class="footer-note">Rates current as of April 2026 · All prices in AUD · GST not included</span>
+    <div class="footer-dot"></div>
+    <span class="footer-note">serrcasm@gmail.com</span>
+  </div>
+
+</div>
+</body>
+</html>
